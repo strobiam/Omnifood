@@ -1,0 +1,650 @@
+/* -------------------------------------*/
+/*BASIC SETUP*/
+/* -------------------------------------*/
+
+
+*{
+    margin:0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color:floralwhite;
+    color: #575151;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight:300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;   
+    overflow-x: hidden;
+}
+
+.clearfix {zoom: 1}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+
+/* -------------------------------------*/
+/* REUSABLE COMPONENTS */
+/* -------------------------------------*/
+
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.box {
+    padding: 1%;
+}
+
+.icon-small {
+    display:inline-block;
+    width: 30px;
+    text-align: center;
+    font-size: 120%;
+    margin-right: 10px;
+    color: #e67e22;
+
+    
+    /*secrets to align text and icons*/
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top:-5px;
+}
+
+/* HEADINGS */
+
+
+h1, h2, h3 {
+    font-size: 240%;
+    font-weight: 300;
+    text-transform: uppercase; 
+}
+
+h1 {
+    margin-top:0;
+    margin-bottom: 20px;
+    color: #fff; 
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align:center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+h2:after {
+    display:block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* PARAGRAPH */
+
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/* ICONS */
+
+.icon-big {
+    font-size: 360%;
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+/* LINKS */
+
+a:link, a:visited {       /* stilizarea unui link*/
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    -webkit-transition: border-bottom 0.2s, color 0.2s;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+    
+a:hover, a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/* BUTTONS */
+
+
+.btn:link, .btn:visited, input[type=submit] {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.20s, color 0.20s, margin 0.20s ;
+    transition: background-color 0.20s, color 0.20s, margin 0.20s ;
+}
+
+
+.btn-full:link, .btn-full:visited, input[type=submit] {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: #fff;
+    margin-right: 15px;
+}
+
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #e67e22;
+    color: #e67e22;
+}
+
+
+.btn:hover, .btn:active, input[type=submit]:hover, input[type=submit]:active {
+    background-color: #cf6d17;
+}
+
+.btn-full:hover,
+.btn-full:active  {
+    border: 1px solid #e67e22;
+}
+
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #e67e22;
+    color: #fff;
+}
+
+
+/* -------------------------------------*/
+/* HEADER */
+/* -------------------------------------*/
+
+
+header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(css/img/hero-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(css/img/hero-min.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    background-attachment:fixed;
+}
+    
+.hero-text-box {
+    position:absolute;
+    width: 1140px; 
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.logo {   
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.logo-black {
+    display: none; 
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
+    
+}
+
+/*MAIN NAVI*/
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0px;
+    color:#fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.5s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+}
+
+
+/*mobile navi*/
+.mobile-nav-icon {
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav-icon i {
+    font-size: 200%;
+    color: #fff;
+}
+
+
+/*STICKY NAVI*/
+
+.sticky {
+    position: fixed; /* deci il punem sa fie fix, sa nu aiba nici  margine, sa aiba latime de 100% si culoare alba in spate*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 2px 2px #efefef;
+    z-index: 9999; /*lucrurile sunt asezate unele epste altele iar cu z-index, sticky se aseaza deasupra tuturor elementelor din pagina*/
+}
+
+.sticky .main-nav {
+    margin-top: 18px;
+}
+
+.sticky .main-nav li a:link,  /*stilizam aceste elemente doar pt cand este sticky class, de aceea trecem si in fata .sticky. main nav este inside of the sticky class*/
+.sticky .main-nav li a:visited {
+    padding: 16px 0px;
+    color:#555; /* aceasta este culoarea pe care am folosit-o in site*/
+}
+
+.sticky .logo { display: none; }
+.sticky .logo-black { display: block; }
+
+
+
+
+/* -------------------------------------*/
+/* FEATURES */
+/* -------------------------------------*/
+
+.section-features .long-copy {
+    margin-bottom: 30px;
+}
+
+/* -------------------------------------*/
+/* MEALS */
+/* -------------------------------------*/
+
+.section-meals {
+    padding: 0;
+}
+
+.meals-showcase {
+    list-style: none; /* ca sa scapam de bulleturi*/
+    width: 100%; /* trebuie stabilita latimea pe care ne jucam */
+}
+
+.meals-showcase li {
+    display: block; /* este un instrument f des folosit de developer*/
+    float: left;
+    width: 25%; /* fiind 4 imagini pe rand, din 100% fiecare ocupa 25%*/
+}
+
+.meal-photo {
+    width: 100%; /*se foloseste pt a se vedea ca ia widthul parintelui, adica .meals-showcase li care are 25% din tot */
+    margin: 0;
+    overflow: hidden; /*.meal-photo imgdepaseste latimea broserului prin transform, ii dam parintelui hidden - ce iese din browser sa nu se vada */
+    background-color: #000;
+}
+
+.meal-photo img {           /*  definim si mai specific*/
+    opacity: 0.7;
+    width: 100%;            /*mai specificam o data widthul*/
+    height: auto;
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);   /*cand vine mouseul pe poza sa se mareasca poza si sa iasa din container, folosim transform si scalare*/
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+
+.meal-photo img:hover {
+    opacity: 1;
+    -webkit-transform:scale(1.03);
+    transform:scale(1.03); /* pt ca la scalare cu 1, fiecare poza are o margine alba jos, se scaleaza mai sus, la 1.03*/
+}
+
+/* -------------------------------------*/
+/* HOW IT WORKS */
+/* -------------------------------------*/
+
+.section-steps {
+    background-color: #f4f4f4;
+}
+
+.steps-box:first-child {
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
+}
+
+.steps-box:last-child {
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+.app-screen {
+    width: 40%;
+}
+
+.works-step {
+    margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+    margin-bottom: 80px;
+}
+
+.works-step div {
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    display: inline-block;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    font-size: 150%;
+    margin-right: 25px;
+}
+
+.btn-app:link, .btn-app:visited {
+    border: 0;  /* asa sterg linia de jos de la linkurile stilizate*/
+}
+
+.btn-app img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* -------------------------------------*/
+/* CITIES */
+/* -------------------------------------*/
+
+.box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.city-feature {
+    margin-bottom: 5px; 
+}
+
+/* -------------------------------------*/
+/* TESTIMONIALS */
+/* -------------------------------------*/
+
+.section-testimonials {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.79)), to(rgba(0, 0, 0, 0.79))), url(css/img/back-customers-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.79), rgba(0, 0, 0, 0.79)), url(css/img/back-customers-min.jpg);
+    background-size: cover; /*proprietate care intinde imaginea pe tot ecranul*/
+    color: #fff;
+    background-attachment:fixed;
+    
+}
+
+blockquote {
+    padding: 2%;
+    line-height: 145%;
+    font-style:italic;
+    position: relative; /* ca sa punem position absolute in copil, aici, in parinte, punem relative*/
+    margin-top: 20px;
+}
+
+blockquote:before {
+    content:"\201E";
+    font-size: 400%; /* facem ghilimelele mari*/
+    display: inline-block; /* ca sa le poti pune deasupra textului, ca un titlu, da display block*/
+    /*position:absolute;*/
+    top: 10px;
+    left: 0;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25%;
+    display: block; /* avem text, img si nume. departajam img si nume si le aranjam. de aceea display inline block, pt aranjare */
+}
+
+cite img {
+    height: 45%;
+    border-radius: 45%;
+    margin-right: 10px;
+    vertical-align:sub; /* foarte tare pentru aliniere */
+}
+
+
+/* -------------------------------------*/
+/* SIGN UP */
+/* -------------------------------------*/
+
+
+.section-plans {
+    background-color: #f4f4f4; /* cu doua sectiuni in urma am avut culoarea gri pe fundal, o folosim si acum*/
+}
+
+.plan-box {
+    background-color: #fff; /* vom face coloanele albe in cadrul griului din fundal. s-a creat acest div special, pt ca doar cu divul col span nu am fi putut avea culoarea alba si altte modificari ale fiecarei coloane, asa cum ni le doream*/
+    border-radius: 5px; /* radius, width si mleft ocupa 100% din spatiul alocat fiecarei coloane*/
+    width: 90%;
+    margin-left: 5%;
+    -webkit-box-shadow: 0 3px 3px #efefef;
+    box-shadow: 0 3px 3px #efefef;
+}
+
+.plan-box div {    /* el a definit in fiecare plan-box cate 3 divuri, acum de stilizat*/
+    padding: 15px;
+    border-bottom: 1px solid #efefef;
+}
+
+.plan-box div:first-child {
+    background-color: #fcfcfc; /* am pus ceva f fin, aproape impeceptibil, dar sigur face diferenta. orice e subliniat, ajune pe ochi*/
+    border-top-left-radius: 5px; /* le mai punem inca o data pentru ca intre timp nu se mai vad*/
+    border-top-right-radius: 5px; /* le mai punem inca o data pentru ca intre timp nu se mai vad*/
+}
+
+.plan-box div:last-child {  /* cu last-child selectam si stilizam ultimul element aflat intr-o lista, ca s anu ii punem class sau id*/
+    text-align: center;
+    border: 0;
+}
+
+.plan-price {
+    font-size: 280%; /* vrem ca pretul sa fie scris f mare*/
+    margin-bottom: 10px; /* sa fie un pic de distanta intre pret si ce urmeaza*/
+    font-weight: 100; /*pt ca fontul e mare, cf regulii, micsoram fontweight cu posibilitatile alese in linkul de fonturi din headul htmlului*/
+    color: #e67e22;
+}
+
+.plan-price span {
+    font-size: 30%; /* pt ca span e copilul lui plan=price, acesti 30% vor fi din parinte, care are trecut 300%. adica 30% din 300%, 300% reprezentand 100% pt copil*/
+    font-weight: 300; /* parintele are 100, dar daca copilul vrea sa aiba 300, trebuie specificat acest lucru, altfel va inherit pe cel al parintelui*/
+}
+
+.plan-price-meal {
+    font-size: 80%;
+}
+
+.plan-box ul {
+    list-style: none;
+}
+
+.plan-box ul li {
+    padding: 5px 0;
+}
+
+
+
+/* -------------------------------------*/
+/* FORM */
+/* -------------------------------------*/
+
+
+.contact-form {
+    width: 60%; /* pt ca nu vrem sa fie pe toata pagina, ii dam doar 60% din total parent width*/
+    margin: 0 auto; /* ca sa centram acest contact form inauntrul elem parinte*/
+}
+
+input[type=text], input[type=email], select, textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc; /* pt a scapa de linia de jos a casutelor care are alta culoare folosim border subtil. el foloseste mult culoarea #ccc */
+    margin: 6px;
+}
+
+input [type=checkbox] {
+    margin: 10px 5px 10px 0;
+}
+
+*:focus {outline:none;}
+
+
+
+/* -------------------------------------*/
+/* FORM */
+/* -------------------------------------*/
+
+footer {
+    background-color: #333333;
+    padding: 50px;
+    font-size: 80%;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li, .social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child, .social-links li:last-child {
+    margin-right: 0;
+}
+
+.footer-nav li a:link, .footer-nav li a:visited, .social-links li a:link, .social-links li a:visited {
+    text-decoration: none;
+    border:0; /*asta o facem pt ca toate linkurile au fost setate sa aiba border si pt astea din footer scoatem borderurile*/
+    color: #888;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.footer-nav a:hover, .footer-nav a:active {
+    color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 160%;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.ion-social-facebook:hover {
+    color: #3b5998;
+}
+
+.ion-social-twitter:hover {
+    color: #55acee;
+}
+
+.ion-social-googleplus:hover {
+    color: #dd4b39;
+}
+
+.ion-social-instagram:hover {
+    color: #4c68d7;
+}
+
+
+footer p {
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/*Animations*/  
+
+.js--wp-1, .js--wp-2, .js--wp-3 { 
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.js--wp-4 {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.js--wp-1.animated, .js--wp-2.animated, .js--wp-3.animated, .js--wp-4.animated {
+    opacity: 1;
+}
+
+
+
+
+
